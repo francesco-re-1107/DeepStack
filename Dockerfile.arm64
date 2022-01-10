@@ -9,7 +9,7 @@ RUN mkdir /datastore
 
 ENV DATA_DIR /datastore
 ENV TEMP_PATH /deeptemp/
-ENV PROFILE jetson
+ENV PROFILE desktop_cpu
 
 WORKDIR /app
 
@@ -24,7 +24,7 @@ RUN pip3 install future
 RUN pip3 install numpy
 
 RUN mkdir /app/sharedfiles
-COPY ./sharedfiles/yolov5s.pt /app/sharedfiles/yolov5s.pt
+COPY ./sharedfiles/yolov5m.pt /app/sharedfiles/yolov5m.pt
 COPY ./sharedfiles/face_lite.pt /app/sharedfiles/face_lite.pt
 COPY ./sharedfiles/facerec-high.model /app/sharedfiles/facerec-high.model
 COPY ./sharedfiles/scene.pt /app/sharedfiles/scene.pt
